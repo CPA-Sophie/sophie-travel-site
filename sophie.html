@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sophie · 旅行與興趣</title>
+  <title>Sophie · AI, Travel & Interests</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TC:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,10 +26,11 @@
       overflow-x: hidden;
     }
 
-    /* ─── NAV ─── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       padding: 20px 60px;
       display: flex;
       justify-content: space-between;
@@ -47,7 +48,10 @@
       text-decoration: none;
     }
 
-    .nav-links { display: flex; gap: 28px; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
 
     .nav-links a {
       font-size: 0.8rem;
@@ -57,9 +61,9 @@
       text-decoration: none;
       transition: color 0.3s;
     }
+
     .nav-links a:hover { color: var(--terracotta); }
 
-    /* ─── PROFILE HERO ─── */
     .profile-hero {
       min-height: 100vh;
       display: flex;
@@ -106,7 +110,8 @@
     .profile-tag::before {
       content: '';
       display: inline-block;
-      width: 24px; height: 1px;
+      width: 24px;
+      height: 1px;
       background: var(--sage);
     }
 
@@ -148,12 +153,11 @@
       font-size: 1rem;
       line-height: 2;
       color: #5a4a3a;
-      max-width: 540px;
+      max-width: 560px;
       opacity: 0;
       animation: fadeUp 0.9s ease forwards 0.6s;
     }
 
-    /* stats row */
     .stats-row {
       display: flex;
       gap: 48px;
@@ -185,7 +189,6 @@
       color: #8a7a6a;
     }
 
-    /* ─── TRAVEL SECTION ─── */
     .section {
       padding: 80px;
       max-width: 1100px;
@@ -206,8 +209,6 @@
       line-height: 1;
     }
 
-    .section-info {}
-
     .section-label {
       font-size: 0.68rem;
       letter-spacing: 0.3em;
@@ -222,7 +223,6 @@
       color: var(--ink);
     }
 
-    /* travel grid */
     .travel-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
@@ -258,7 +258,9 @@
 
     .travel-info {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       padding: 20px;
       background: linear-gradient(to top, rgba(26,20,16,0.85), transparent);
       color: white;
@@ -280,7 +282,6 @@
       margin-top: 2px;
     }
 
-    /* ─── INTERESTS ─── */
     .interests-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -304,13 +305,17 @@
     .interest-item::after {
       content: attr(data-emoji);
       position: absolute;
-      right: -8px; top: -8px;
+      right: -8px;
+      top: -8px;
       font-size: 4rem;
       opacity: 0.08;
       pointer-events: none;
     }
 
-    .interest-icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .interest-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
 
     .interest-title-zh {
       font-family: 'Noto Serif TC', serif;
@@ -333,7 +338,6 @@
       color: #6a5a4a;
     }
 
-    /* ─── SEPARATOR ─── */
     .sep {
       display: flex;
       align-items: center;
@@ -341,10 +345,18 @@
       padding: 0 80px;
       margin: 20px 0;
     }
-    .sep-line { flex: 1; height: 1px; background: var(--light-brown); }
-    .sep-icon { color: var(--gold); font-size: 1rem; }
 
-    /* ─── FOOTER ─── */
+    .sep-line {
+      flex: 1;
+      height: 1px;
+      background: var(--light-brown);
+    }
+
+    .sep-icon {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
     footer {
       text-align: center;
       padding: 48px;
@@ -359,21 +371,22 @@
       text-decoration: none;
     }
 
-    /* ─── REVEAL ─── */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* ─── RESPONSIVE ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 768px) {
       .profile-hero { padding: 100px 32px 60px; }
       .section { padding: 60px 32px; }
@@ -395,36 +408,41 @@
     </div>
   </nav>
 
-  <!-- PROFILE HERO -->
   <section class="profile-hero">
     <div class="profile-content">
       <div class="profile-tag">Personal Page · 個人頁面</div>
+
       <h1 class="profile-name">
         Sophie
         <em>我的世界</em>
       </h1>
+
       <div class="profile-roles">
-        <span class="role-badge">研究生 Graduate Student</span>
-        <span class="role-badge">旅行愛好者 Traveler</span>
-        <span class="role-badge">攝影 Photography</span>
-        <span class="role-badge">台灣 Taiwan</span>
+        <span class="role-badge">AI Applications & Data Analysis</span>
+        <span class="role-badge">Traveler</span>
+        <span class="role-badge">Photography</span>
+        <span class="role-badge">Taiwan</span>
       </div>
+
       <p class="profile-bio">
-        嗨！我是 Sophie，目前是研究生，喜歡旅行、攝影、探索不同的文化。<br>
-        每一趟旅程都是一個新的故事。<br><br>
-        Hi! I'm Sophie, a graduate student who loves traveling, photography, and exploring different cultures. Every journey is a new story waiting to be told.
+        嗨！我是 Sophie，目前專注於 AI 應用與資料分析，喜歡旅行、攝影、探索不同的文化。<br>
+        每一趟旅程都是一個新的故事，也是一種觀察世界的方式。<br><br>
+        Hi! I'm Sophie, focusing on AI applications and data analysis. I enjoy traveling, photography, and exploring different cultures. Every journey is a new story waiting to be told.
       </p>
+
       <div class="stats-row">
         <div class="stat">
           <div class="stat-num">12+</div>
           <div class="stat-label">Countries</div>
           <div class="stat-label-zh">造訪國家</div>
         </div>
+
         <div class="stat">
           <div class="stat-num">∞</div>
           <div class="stat-label">Memories</div>
           <div class="stat-label-zh">美好回憶</div>
         </div>
+
         <div class="stat">
           <div class="stat-num">1</div>
           <div class="stat-label">Adventure</div>
@@ -434,15 +452,21 @@
     </div>
   </section>
 
-  <div class="sep"><div class="sep-line"></div><div class="sep-icon">✦</div><div class="sep-line"></div></div>
+  <div class="sep">
+    <div class="sep-line"></div>
+    <div class="sep-icon">✦</div>
+    <div class="sep-line"></div>
+  </div>
 
-  <!-- TRAVEL -->
   <section class="section" id="travel">
     <div class="section-header reveal">
       <div class="section-num">01</div>
       <div class="section-info">
         <div class="section-label">Wanderlust · 旅行足跡</div>
-        <div class="section-title">去過的地方<br><em style="font-style:italic;color:var(--terracotta)">Places I've Been</em></div>
+        <div class="section-title">
+          去過的地方<br>
+          <em style="font-style: italic; color: var(--terracotta);">Places I've Been</em>
+        </div>
       </div>
     </div>
 
@@ -454,6 +478,7 @@
           <div class="travel-en">Japan · 最喜歡的國家</div>
         </div>
       </div>
+
       <div class="travel-card">
         <div class="travel-emoji">🇰🇷</div>
         <div class="travel-info">
@@ -461,6 +486,7 @@
           <div class="travel-en">South Korea</div>
         </div>
       </div>
+
       <div class="travel-card">
         <div class="travel-emoji">🇹🇭</div>
         <div class="travel-info">
@@ -468,6 +494,7 @@
           <div class="travel-en">Thailand</div>
         </div>
       </div>
+
       <div class="travel-card">
         <div class="travel-emoji">🏔️</div>
         <div class="travel-info">
@@ -475,6 +502,7 @@
           <div class="travel-en">Hehuanshan, Taiwan</div>
         </div>
       </div>
+
       <div class="travel-card">
         <div class="travel-emoji">🌊</div>
         <div class="travel-info">
@@ -485,15 +513,21 @@
     </div>
   </section>
 
-  <div class="sep"><div class="sep-line"></div><div class="sep-icon">✦</div><div class="sep-line"></div></div>
+  <div class="sep">
+    <div class="sep-line"></div>
+    <div class="sep-icon">✦</div>
+    <div class="sep-line"></div>
+  </div>
 
-  <!-- INTERESTS -->
   <section class="section" id="interests">
     <div class="section-header reveal">
       <div class="section-num">02</div>
       <div class="section-info">
         <div class="section-label">Hobbies · 興趣愛好</div>
-        <div class="section-title">我喜歡的事<br><em style="font-style:italic;color:var(--terracotta)">What I Love</em></div>
+        <div class="section-title">
+          我喜歡的事<br>
+          <em style="font-style: italic; color: var(--terracotta);">What I Love</em>
+        </div>
       </div>
     </div>
 
@@ -502,54 +536,78 @@
         <div class="interest-icon">📷</div>
         <div class="interest-title-zh">攝影</div>
         <div class="interest-title-en">Photography</div>
-        <p class="interest-desc">用鏡頭捕捉生活中的美好瞬間，喜歡街拍和風景攝影。<br>Capturing life's beautiful moments through the lens.</p>
+        <p class="interest-desc">
+          用鏡頭捕捉生活中的美好瞬間，喜歡街拍和風景攝影。<br>
+          Capturing life's beautiful moments through the lens.
+        </p>
       </div>
+
       <div class="interest-item reveal" data-emoji="✈️">
         <div class="interest-icon">✈️</div>
         <div class="interest-title-zh">旅行</div>
         <div class="interest-title-en">Travel</div>
-        <p class="interest-desc">探索不同的文化與城市，每個地方都有屬於自己的故事。<br>Exploring different cultures and cities around the world.</p>
+        <p class="interest-desc">
+          探索不同的文化與城市，每個地方都有屬於自己的故事。<br>
+          Exploring different cultures and cities around the world.
+        </p>
       </div>
+
       <div class="interest-item reveal" data-emoji="☕">
         <div class="interest-icon">☕</div>
         <div class="interest-title-zh">咖啡</div>
         <div class="interest-title-en">Coffee</div>
-        <p class="interest-desc">喜歡在不同城市的咖啡廳裡發呆、讀書、感受當地氛圍。<br>Finding cozy cafés in every city I visit.</p>
+        <p class="interest-desc">
+          喜歡在不同城市的咖啡廳裡發呆、讀書、感受當地氛圍。<br>
+          Finding cozy cafés in every city I visit.
+        </p>
       </div>
+
       <div class="interest-item reveal" data-emoji="📚">
         <div class="interest-icon">📚</div>
         <div class="interest-title-zh">閱讀</div>
         <div class="interest-title-en">Reading</div>
-        <p class="interest-desc">喜歡在旅途中讀書，讓文字帶我去更遠的地方。<br>Books take me further than any plane ever could.</p>
+        <p class="interest-desc">
+          喜歡在旅途中讀書，讓文字帶我去更遠的地方。<br>
+          Books take me further than any plane ever could.
+        </p>
       </div>
+
       <div class="interest-item reveal" data-emoji="🍜">
         <div class="interest-icon">🍜</div>
         <div class="interest-title-zh">美食</div>
         <div class="interest-title-en">Food</div>
-        <p class="interest-desc">旅行的一半是吃，探索當地美食是我最愛的旅行方式。<br>Half of traveling is eating — local food is my love language.</p>
+        <p class="interest-desc">
+          旅行的一半是吃，探索當地美食是我最愛的旅行方式。<br>
+          Half of traveling is eating — local food is my love language.
+        </p>
       </div>
+
       <div class="interest-item reveal" data-emoji="🎵">
         <div class="interest-icon">🎵</div>
         <div class="interest-title-zh">音樂</div>
         <div class="interest-title-en">Music</div>
-        <p class="interest-desc">旅途中一定要有好的播放清單相伴。<br>Every journey needs the perfect soundtrack.</p>
+        <p class="interest-desc">
+          旅途中一定要有好的播放清單相伴。<br>
+          Every journey needs the perfect soundtrack.
+        </p>
       </div>
     </div>
   </section>
 
   <footer>
     <p>Sophie · 個人網站 · <a href="index.html">← 回首頁 Back to Home</a></p>
-    <p style="margin-top:8px;opacity:0.6;">Web Design Final Project · 2025</p>
+    <p style="margin-top: 8px; opacity: 0.6;">AI & Web Design Project · 2025</p>
   </footer>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 100);
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
         }
       });
     }, { threshold: 0.1 });
+
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
